@@ -1,0 +1,32 @@
+body { background-color: black; }
+
+header { text-align: center; }
+
+h1 { color: #EFC0D0; font-variant: small-caps; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+
+p { 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    background-color: #EFC0D0; 
+    text-align: center;
+    border-radius: 1em;
+    padding: 1em 10em;
+    margin: 2em;
+}
+
+main {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
+
+.projects a { 
+    color: #FBBEA7;
+}
+
+.github {
+    color: #945c47;
+}
+
+div {
+    text-align: center;
+}
