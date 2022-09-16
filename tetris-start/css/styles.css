@@ -1,3 +1,38 @@
 figure {
-    max-width: 60px;
+    max-width: 650px;
+    margin: auto;
+}
+
+figure img {
+    width: 100%;
+}
+
+header main footer {
+    width: 90vw;
+}
+
+#tetlist {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+div {
+    flex: 1 0 450px;
+}
+
+span {
+    display: block;
+    margin: 1em;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.tet {
+    width: 60%;
+}
+
+.aliases {
+    text-align: left;
+    margin: 1em;
 }
