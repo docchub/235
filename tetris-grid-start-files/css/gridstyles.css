@@ -104,12 +104,12 @@ div.tet {
     grid-column: 1/3;
     grid-row: 1/span 2;
 }
-#o img { transform: rotate(360deg); }
+#o img:hover { transform: rotate(360deg); }
 #i {
     grid-column: 3/-1;
     grid-row: span 1;
 }
-#i img { transform: rotate(180deg); }
+#i img:hover { transform: rotate(180deg); }
 #z {
     grid-column: 2/span 2;
     grid-row: 2/span 3;
@@ -118,6 +118,9 @@ div.tet {
     transform-origin: 0 0;
     transform: translateX(205px) rotate(90deg);
 }
+#z img:hover {
+    transform: translateY(205px) rotate(-90deg);
+}
 #l {
     grid-column: 1/2;
     grid-row: 3/span;
@@ -125,11 +128,17 @@ div.tet {
 #l img{
     transform: translate(-50px, 50px) rotate(-90deg);
 }
+#l img:hover {
+    transform: rotate(-180deg);
+}
 #s{
     grid-column: 3/6;
     grid-row: 3/5;
 }
 #s img { transform: rotate(360deg); }
+#s img:hover {
+    transform: rotate(-90deg);
+}
 #t{
     grid-column: 3/span;
     grid-row: 4/span;
@@ -138,12 +147,12 @@ div.tet {
     transform-origin: 0 0;
     transform: translate(105px, 305px) rotate(180deg);
 }
-#j img { transform: rotate(720deg); }
+#t img:hover {
+    transform: rotate(360deg);
+}
+#j img:hover { transform: rotate(720deg); }
 
 img {
     transition-property: transform;
     transition-duration: 2s;
-}
-img:hover {
-    transform: rotate(-90deg);
 }
