@@ -29,7 +29,7 @@ h1.game {
     grid-area: logo;
     width: 500px;
     height: 345px;
-    background: url(/tetris-grid-start-files/images/tetris-logo.png) no-repeat;
+    background: url(https://people.rit.edu/dah8728/235/tetris-grid-start-files/images/tetris-logo.png) no-repeat;
     text-indent: -9999px;
 }
 
@@ -138,6 +138,7 @@ div.tet {
     transform-origin: 0 0;
     transform: translate(105px, 305px) rotate(180deg);
 }
+#j img { transform: rotate(720deg); }
 
 img {
     transition-property: transform;
