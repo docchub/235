@@ -1,0 +1,78 @@
+header { 
+    background-color: rgb(86, 130, 200); 
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+body { 
+    padding-top: 5em;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+h1, h2, h3, h4 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+h2 {
+    color: white;
+    font-size: smaller;
+    padding-left: 2em;
+}
+
+#top {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 475%;
+    margin: 0;
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+#middle img {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    border: 8px solid black;
+}
+
+main hr {
+    border: 2px solid black;
+}
+
+h4 {
+    color: rgb(112, 152, 217);
+}
+
+.clock {
+    width: 20vw;
+}
+
+.bigjones {
+    width: 50%;
+    max-width: 500px;
+}
+
+footer {
+    background-color: bisque;
+}
+
+footer h4 {
+    padding-left: 2em;
+}
+
+#sections {
+    display: flex;
+}
+
+#sections hr {
+    margin: 1em;
+}
+
+#sections p {
+    font-size: smaller;
+    padding: 0 1em;
+}
