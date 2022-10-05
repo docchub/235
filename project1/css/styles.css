@@ -1,10 +1,30 @@
-header { background-color: rgb(86, 130, 200); }
+header { 
+    background-color: rgb(86, 130, 200); 
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+main { 
+    padding-top: 5em; 
+    padding-left: 2em;
+    padding-right: 2em;
+}
 
 h1, h2, h3, h4 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 h2 {
     color: white;
-    border-style: 1px, solid, red;
-    background-color: rgb(86, 130, 200);
+    font-size: smaller;
     padding-left: 2em;
+}
+
+h1 {
+    font-size: 300%;
+    margin: 0;
+}
+
+#subheading { 
+
 }
