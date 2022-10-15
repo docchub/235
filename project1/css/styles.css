@@ -1,0 +1,140 @@
+header { 
+    background-color: #FBBEA7; 
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+header h3 {
+    color: black;
+    padding-left: 2em;
+}
+
+header hr {
+    color: black;
+    border: 2px solid #c09181;
+    margin: 0;
+}
+
+#banner {
+    display: flex;
+    justify-content: space-between;
+}
+
+#externallinks {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+}
+
+a { 
+    color: black;
+    margin-right: 1em;
+}
+a:visited { color: black }
+
+#picture {
+    position: absolute;
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+#picture img { 
+    width: 45%;     
+    border: 5px solid #c09181;
+    border-radius: 1em;
+}
+
+body { 
+    padding-top: 5em;
+    padding-left: 25%;
+    padding-right: 25%;
+    background-color: black;
+}
+
+@media (max-width: 1150px) {
+    #picture img { display: none;}
+    body { padding-left: 5%; padding-right: 5%;}
+}
+
+h1, h2, h3, h4 { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: white
+}
+
+p { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+.project {
+    background-color: #EFC0D0;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.about {
+    color: white;
+}
+
+#subheading hr { border: 1px dashed white; }
+
+#top {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 475%;
+    margin: 0;
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+#unfinishedbusiness img {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    border: 8px solid black;
+}
+
+main hr {
+    border: 2px solid black;
+}
+
+h4 {
+    color: rgb(112, 152, 217);
+    padding-top: 1em;
+}
+
+.clock {
+    width: 20vw;
+}
+
+.bigjones {
+    width: 50%;
+    max-width: 400px;
+}
+
+footer {
+    background-color: bisque;
+    border-radius: 1em;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+footer h4 {
+    padding-left: 2em;
+}
+
+#sections {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#sections hr {
+    margin: 0.5em;
+}
+
+#sections p {
+    font-size: smaller;
+    padding: 0 2em;
+}
