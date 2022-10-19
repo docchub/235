@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps-4-HW</title>
+	<style>
+		body{border:1px solid gray;}
+	</style>
+</head>
+<body>
+<h1>My Favorites</h1>
+<h2>My Favorite Colors</h2>
+
+<ol id="colorsList">
+
+</ol>
+
+<h2>My Favorite Foods</h2>
+
+<ol id="foodsList">
+
+</ol>
+
+<h2>My Favorite Links</h2>
+
+<ol id="linksList">
+	
+</ol>
+
+<script>
+"use strict";
+let colors = ["red","green","blue","purple","pink"];
+let foods = ["italian sub", "pad thai", "dumplings"]; // add some foods
+
+// Get reference to all ordered lists
+let ol = document.querySelectorAll("ol");
+
+// Create a list element for each color
+for(let i=0; i < colors.length; i++) {
+    let li = document.createElement("li");    
+    li.innerHTML = colors[i];
+    ol[0].appendChild(li);
+}
+
+// Create a list element for each food
+for(let i = 0; i < foods.length; i++) {
+    let li = document.createElement("li");    
+    li.innerHTML = foods[i];
+    ol[1].appendChild(li);
+}
+
+// Optional - can you figure out how to pull both the key AND the value
+// from the `links` object literal?
+let links = {
+    "RIT": "http://www.rit.edu",
+    "RWAG" : "https://www.facebook.com/RWAGclub",
+    "New Media Club" : "http://newmediaclub.cias.rit.edu"
+}
+
+// Create a list of links
+for (let property in links){
+    let listItem = document.createElement("li");
+    let a = document.createElement("a");
+    a.innerHTML = property;
+    a.href = links[property];
+    listItem.appendChild(a);
+    ol[2].appendChild(listItem);
+}
+
+</script>
+</body>
+</html>
