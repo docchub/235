@@ -1,16 +1,17 @@
+html {scroll-behavior:smooth;}
+
 header { 
     background-color: #FBBEA7; 
     position: absolute;
+    position: fixed;
     top: 0%;
     left: 0%;
     right: 0%;
 }
-
 header h3 {
     color: black;
     padding-left: 2em;
 }
-
 header hr {
     color: black;
     border: 2px solid #c09181;
@@ -20,24 +21,64 @@ header hr {
 #banner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-#externallinks {
+#menu { 
+    width: 50%; 
+    margin: 0%;
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+}
+#menu h4 {
+    color: black;
+    font-family: 'Press Start 2P', monospace;
+}
+#menu a { text-decoration: none; }
+
+#externallinks a, #externallinks a:visited {
+    margin-right: 1em;
+    color: black;
+    text-decoration: none;
+}
+
+#shmup h4 { 
+    color: #ced8f2;
+    font-family: 'Press Start 2P', monospace;
+    text-align: center;
+}
+#shmup p { background: #ced8f2; }
+#shmup a { 
+    font-family:'Courier New', Courier, monospace;
+    color: #a5725a;
     margin-right: 1em;
 }
+#shmup a:visited {     
+    color: #a5725a;
+}
 
+#unfinishedbusiness h4 { 
+    color: #fff47c;
+    font-family: 'Press Start 2P', monospace;
+    text-align: center;
+}
+#unfinishedbusiness p { background: #fff47c; }
 #unfinishedbusiness a { 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     color: #e75905;
     margin-right: 1em;
 }
 #unfinishedbusiness a:visited {     
     color: #e75905;
 }
+
+#mournblade h4 { 
+    color: #EFC0D0;
+    font-family: 'Press Start 2P', monospace;
+    text-align: center;
+}
 #mournblade a { 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     color: #72751c;
     margin-right: 1em;
 }
@@ -50,7 +91,6 @@ header hr {
     padding-left: 2%;
     padding-top: 2%;
 }
-
 #picture img { 
     width: 45%;     
     border: 5px solid #c09181;
@@ -66,6 +106,13 @@ body {
 
 @media (max-width: 1150px) {
     #picture img { display: none;}
+    #subheading { display: none;}
+    #myName { display: none; }
+    #menu {
+        width: 80%;
+        text-align: center;
+        font-size: smaller;
+    }
     body { padding-left: 5%; padding-right: 5%;}
 }
 
@@ -80,12 +127,18 @@ p { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     background-color: #EFC0D0;
     border-radius: 1em;
     padding: 1em;
+    padding-top: 0px;
 }
 
 .about {
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+h3 {
+    color: white;
+}
+.about li { color: #FBBEA7; text-decoration: underline; }
+.about a, .about a:visited { color: #FBBEA7; }
 #subheading hr { border: 1px dashed white; }
 
 #top {
@@ -100,13 +153,6 @@ h1 {
     justify-content: flex-end;
 }
 
-#unfinishedbusiness img, #mournblade img {
-    float: right;
-    margin-left: 1em;
-    margin-bottom: 1em;
-    border: 8px solid black;
-}
-
 main hr {
     border: 2px solid black;
 }
@@ -119,6 +165,11 @@ h4 {
 .portfolioImage {
     width: 50%;
     max-width: 400px;
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+    border: 8px solid black;
 }
 
 footer {
