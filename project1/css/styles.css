@@ -30,16 +30,22 @@ header hr {
     display: flex;
     justify-content: space-around;
 }
-#menu h4 {
+#menu a { 
+    text-decoration: none; 
     color: black;
     font-family: 'Press Start 2P', monospace;
 }
-#menu a { text-decoration: none; }
 
 #externallinks a, #externallinks a:visited {
     margin-right: 1em;
     color: black;
     text-decoration: none;
+}
+
+.project {
+    border-radius: 1em;
+    padding: 1em;
+    padding-top: 0px;
 }
 
 #shmup h4 { 
@@ -77,6 +83,7 @@ header hr {
     font-family: 'Press Start 2P', monospace;
     text-align: center;
 }
+#mournblade p { background: #EFC0D0; }
 #mournblade a { 
     font-family:'Courier New', Courier, monospace;
     color: #72751c;
@@ -116,19 +123,12 @@ body {
     body { padding-left: 5%; padding-right: 5%;}
 }
 
-h1, h2, h3, h4 { 
+h1, h3 { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    color: white
 }
+h1 { color: white; }
 
 p { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
-.project {
-    background-color: #EFC0D0;
-    border-radius: 1em;
-    padding: 1em;
-    padding-top: 0px;
-}
 
 .about {
     color: white;
@@ -137,14 +137,9 @@ p { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 h3 {
     color: white;
 }
-.about li { color: #FBBEA7; text-decoration: underline; }
-.about a, .about a:visited { color: #FBBEA7; }
+#myInfo li { color: #FBBEA7; text-decoration: underline; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+#myInfo a, #myInfo a:visited { color: #FBBEA7; }
 #subheading hr { border: 1px dashed white; }
-
-#top {
-    display: flex;
-    justify-content: space-between;
-}
 
 h1 {
     font-size: 475%;
@@ -152,17 +147,11 @@ h1 {
     padding-right: 20px;
     justify-content: flex-end;
 }
-
-main hr {
-    border: 2px solid black;
-}
-
 h4 {
-    color: rgb(112, 152, 217);
     padding-top: 1em;
 }
 
-.portfolioImage {
+.project a img {
     width: 50%;
     max-width: 400px;
     float: right;
