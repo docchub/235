@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Phrases</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Random Phrases</h1>
+    </header>
+
+    <main>
+        <img src="src/background.jpg" alt="background">
+        <h3>Davin Howarth</h3>
+        <div id="content">
+            <p>
+                Random Phrase:
+            </p>
+            <button type="button" class="btn btn-primary btn-lg">Generate Phrase</button>
+        </div>
+    </main>
+
+    <script>
+        "use strict"
+        let string1 = "In meteorology, a cloud is an aerosol consisting of a visible mass of miniature liquid droplets, frozen crystals, or other particles suspended in the atmosphere of a planetary body or similar space.";
+        let string2 = "On Earth, clouds are formed as a result of saturation of the air when it is cooled to its dew point, or when it gains sufficient moisture (usually in the form of water vapor) from an adjacent source to raise the dew point to the ambient temperature.";
+        let string3 = "They are seen in the Earth's homosphere, which includes the troposphere, stratosphere, and mesosphere.";
+        let string4 = "Nephology is the science of clouds, which is undertaken in the cloud physics branch of meteorology. There are two methods of naming clouds in their respective layers of the homosphere, Latin and common name.";
+        let string5 = "Tropospheric clouds can have a direct effect on climate change on Earth.";
+        let phrases = [string1, string2, string3, string4, string5];
+
+        function displayQuote(){
+            let i = Math.random() * (phrases.length);
+            i = i - (i % 1);
+            
+            let p = document.querySelector("p");
+            p.innerHTML = phrases[i];
+            console.log(i);
+        }
+
+        window.onload = function(){
+            displayQuote();
+        }
+
+        let click = (e) => {
+            displayQuote();
+        }
+
+        let button = document.querySelector("button");
+        document.querySelector("button").onclick = click;
+
+    </script>
+</body>
+
+</html>
