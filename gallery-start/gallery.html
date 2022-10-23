@@ -68,7 +68,7 @@
   <section id="main">
       <h1>Snapshots</h1>
       <ul>
-        <li><span data-image="cassie.jpg" title="Cassie">Cassie</span></li>
+        <li><span data-image="cassie.jpg" title="Dog">Cassie</span></li>
         <li><span data-image="seal.jpg" title="Seal">Seal</span></li>
         <li><span data-image="wolf.jpg" title="Wolf">Wolf</span></li>
         <li><span data-image="eagle.jpg" title="Eagle">Eagle</span></li>
@@ -90,11 +90,11 @@
 
 	function changeImage(string){
 		img = document.getElementById("placeholder");
-		img.src = "images/" + string + ".jpg";
+		img.src = "images/" + string;
 	}
 
 	click = (e) => {		
-		changeImage(e.target.title);
+		changeImage(e.target.dataset.image);
 	}
 
 	let spans = document.querySelectorAll("span");
