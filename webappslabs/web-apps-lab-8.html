@@ -18,7 +18,6 @@ let cars = [
 
 // For this exercise you will use Array.filter(), Array.sort(), and Array.map() on
 // the cars array above.
-console.log(cars);
 
 /*
  1 - Create a new array named 'classicCars' that contains only those cars with a
@@ -26,7 +25,6 @@ console.log(cars);
  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 */
 let classicCars = cars.filter(cars => cars.year <= 1970);
-console.log(classicCars);
 
 /*
  2 - Create a new array named 'sortedByYear' that contains the contents of the
@@ -36,7 +34,6 @@ console.log(classicCars);
  
 */
 let sortedByYear = cars.sort((a,b) => a.year - b.year);
-console.log(sortedByYear);
 
 /*
  3 - Create a new array named 'newerYearsOnly' that contains only the .year property 
@@ -55,9 +52,8 @@ console.log(sortedByYear);
  or as a "one-liner" by chaining the method calls.
 */
 let newerYearsOnly = cars.map(cars => cars.year);
-console.log(newerYearsOnly);
 
-// debugger;
+debugger;
 </script>
 </body>
 </html>
