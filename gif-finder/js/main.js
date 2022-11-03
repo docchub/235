@@ -61,26 +61,32 @@ function dataLoaded(e){
 
     let results = obj.data;
     console.log("results.length = " + results.length);
-    let bigString = "<p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>"
+    let bigString = ""
 
     // Loop through results
     for (let i = 0; i < results.length; i++){
         let result = results[i];
 
         // get GIF URL
-        let smallURL = result.images.fixed_width_small.url;
+        let smallURL = result.images.fixed_width_downsampled.url;
         if (!smallURL) smallURL = "images/no-image-found.png";
+
+        // get ratings
+        let gifRating = result.rating.toUpperCase();
+        if (!gifRating) gifRating = "n/a";
 
         // Build a <div> to hold results
         let line = `<div class='result'><img src='${smallURL}' title= '${result.id}' />`;
-        line += "<span><a target='_blank' href='${url}'>View on Giphy</a></span></div>";
+        line += "<span><a target='_blank' href='${url}'>View on Giphy</a>"
+        line += `<p><b>Rating: ${gifRating}</b></p></span>`
+        line += "</div>";
 
         bigString += line;
     }
 
     document.querySelector("#content").innerHTML = bigString;
 
-    document.querySelector("#status").innerHTML = "<b>Success!</b>";
+    document.querySelector("#status").innerHTML = "<b>Success!</b><p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>";
 }
 
 function dataError(e){
