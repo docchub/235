@@ -1,21 +1,43 @@
-// 1
-window.onload = (e) => {document.querySelector("#search").onclick = searchButtonClicked};
-	
-// 2
+window.onload = (e) => {
+    document.querySelector("#search-button").onclick = newSearch;
+    document.querySelector("#prev-button").onclick = searchPrev;
+    document.querySelector("#next-button").onclick = searchNext;
+};
+
+let offset = 0;
 let displayTerm = "";
 
-// 3
+function newSearch(){
+    offset = 0;
+    searchButtonClicked();
+}
+
+function searchPrev(){
+    let limit = document.querySelector("#limit").value;
+    offset -= parseInt(limit);
+    if (offset < 0){
+        offset = 0;
+    }
+    searchButtonClicked();
+}
+
+function searchNext(){
+    let limit = document.querySelector("#limit").value;
+    offset += parseInt(limit);
+    searchButtonClicked();
+}
+
 function searchButtonClicked(){
     console.log("searchButtonClicked() called");
     
     const GIPHY_URL = "https://api.giphy.com/v1/gifs/search?";
 
-    let GIPHY_KEY = "5PuWjWVnwpHUQPZK866vd7wQ2qeCeqg7";
+    let GIPHY_KEY = "ZSA4kPTD7tbBlz4bQm11BBXCuqThrcMu";
 
     let url = GIPHY_URL;
     url += "api_key=" + GIPHY_KEY;
 
-    let term = document.querySelector('#searchterm').value;
+    let term = document.querySelector('#search-input').value;
     displayTerm = term;
 
     term = term.trim();
@@ -29,6 +51,8 @@ function searchButtonClicked(){
     let limit = document.querySelector("#limit").value;
     url += "&limit=" + limit;
 
+    url += "&offset=" + offset;
+
     document.querySelector("#status").innerHTML = "<b>Searching for '" + displayTerm + "'</b>";
 
     console.log(url);
@@ -37,6 +61,14 @@ function searchButtonClicked(){
 }
 
 function getData(url){
+    // Searching
+    document.querySelector("#status").innerHTML = "<b>Searching...</b><br><br>";
+    document.querySelector("#content").innerHTML = "";
+    let limit = document.querySelector("#limit").value;
+    for (let i = 0; i < limit; i++){
+        document.querySelector("#content").innerHTML += "<img src='images/spinner.gif' alt='loading'></img>";
+    }
+
     let xhr = new XMLHttpRequest();
 
     xhr.onload = dataLoaded;
@@ -47,7 +79,7 @@ function getData(url){
     xhr.send();
 }
 
-function dataLoaded(e){
+function dataLoaded(e){    
     let xhr = e.target;
     console.log(xhr.responseText);
 
@@ -55,7 +87,8 @@ function dataLoaded(e){
 
     // no results?
     if(!obj.data || obj.data.length == 0){
-        document.querySelector('#status').innerHTML = "<b>No results found for '" + displayTerm + "'</b>";
+        document.querySelector('#status').innerHTML = "<b>No results found for '" + displayTerm + "'</b><br><br>";
+        document.querySelector("#content").innerHTML = "";
         return;
     }
 
@@ -76,9 +109,8 @@ function dataLoaded(e){
         if (!gifRating) gifRating = "n/a";
 
         // Build a <div> to hold results
-        let line = `<div class='result'><img src='${smallURL}' title= '${result.id}' />`;
-        line += "<span><a target='_blank' href='${url}'>View on Giphy</a>"
-        line += `<p><b>Rating: ${gifRating}</b></p></span>`
+        let line = `<div class='result'><a href='${smallURL}' target='_blank'><img src='${smallURL}' title= '${result.id}' /></a>`;
+        line += `<span><p><b>Rating: ${gifRating}</b></p></span>`
         line += "</div>";
 
         bigString += line;

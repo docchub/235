@@ -5,22 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GiphyFinder+</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />  
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet"/>
+
     <link rel="stylesheet" href="styles/main.css">
+
 	<script src="http://ajaxgoogleapis.com/ajax/libs/jquery1.10.2/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
+
 <body>
     <header>
-        <h1>Giphy Finder</h1>
+        <h1>Giphy Finder <i class="fa-regular fa-star"></i></h1>
     </header>
+
+    <div class="input-group" id="search-bar">
+        <div class="form-outline">
+          <input id="search-input" type="search" id="form1" class="form-control" value=""/>
+        </div>
+        <button id="search-button" type="button" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     
-    <div class="widgets">
-        Search Term -> 
-        <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="cats" />
-    </div>
-    
-    <div class="widgets">
-        Max # results -> 
+    <div class="widgets" id="limiter">
+        <h3>Amount:</h3>
         <select id="limit">
             <option value="5">5</option>
             <option value="10" selected>10</option>
@@ -29,16 +46,29 @@
             <option value="100">100</option>
         </select>
     </div>
-    
-    <div class="widgets">
-        <button type="button" id="search" class="green">Find some GIFs!<br />:-)</button>
+        
+    <div id="results">
+        <hr>
+        <div id="previous">
+            <button class="button button1" id="prev-button">PREV</button>
+        </div>
+
+        <div id="results-mid">
+            <h2><b>Results</b></h2>
+            <div id="status">Ready to Search!<br><br></div>
+        </div>
+
+        <div id="next">
+            <button class="button button2" id="next-button">NEXT</button>
+        </div>
+        <hr>
     </div>
-    <div id="status">Ready to Search!</div>
-    <hr>
-    
-    <h2>Results</h2>
-    <div id="content">
-        <p>No data yet!</p>
+
+    <div id="content-box">
+        <br>
+        <div id="content">
+        </div>
     </div>
+
 </body>
 </html>

@@ -1,69 +1,27 @@
 *{
-    font-family:verdana,tahoma,sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 
- header{
-     background: url(../images/cats.jpg);
-     height:195px;
- }
- 
- header h1{
-     margin:0;
-     color:blue;
-     text-align:center;
-     font-size:100px;
-     padding-top: 35px;
- }
- 
- #status{
-     font-style: italic;
-     /* height:32px; */
- }
-
-button{
-  display : inline-block;
-  cursor : pointer;
-
-  border-style : solid;
-  border-width : 1px;
-  border-radius : 50px;
-  padding : 10px 18px;
-  box-shadow : 0 1px 4px rgba(0,0,0,.6);
-  font-size : 9.5pt;
-  font-weight : bold;
-  color : #fff;
-  text-shadow : 0 1px 3px rgba(0,0,0,.4);
-  font-family : sans-serif;
-  text-decoration : none;
+body{
+    background-color: black;
 }
 
-button.green{
-    border-color: #8fc800;
-      background: #8fc800;
-      background: linear-gradient(top, #8fc800 0%,#438c00 100%);
+#search-bar {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 5px;
 }
 
-button:hover{
-    background: #8fDD00;
-}
-
-button:active{
-    background: #8fFF00;
-    box-shadow : 0 0 6px rgba(0,0,0,.6);
-}
-
-button:focus {outline:0;}
-
-.widgets{
-    margin-top: 1em;
-    margin-bottom:1em;
+.form-outline{ 
+    background-color: white; 
+    border: 2px solid black;
 }
 
 #content{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -75,8 +33,80 @@ button:focus {outline:0;}
 .result img{
     width: 100%;
     box-shadow: 0px 4px 5px 0px;
+    color: black;
 }
 
 .result span{
     order: -1;
+}
+
+body { background-color: rgb(197, 232, 220); }
+
+#results{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 248, 239);
+}
+
+#results-mid{ 
+    text-align: center;
+    padding-top: 15px;
+}
+
+header{
+    text-align: center;
+    padding-top: 2%;
+}
+
+img:hover{
+    color: rgb(66, 129, 108);
+}
+
+.button {
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+cursor: pointer;
+border-radius: 10px;
+}
+
+.button1 {
+background-color: white; 
+color: black; 
+border: 2px solid rgb(66, 129, 108);
+}
+
+.button1:hover {
+background-color: rgb(66, 129, 108);
+color: white;
+}
+
+.button2 {
+background-color: white; 
+color: black; 
+border: 2px solid rgb(66, 129, 108);
+}
+
+.button2:hover {
+background-color: rgb(66, 129, 108);
+color: white;
+}
+
+#limiter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+#limit{
+    height: 50%;
 }
