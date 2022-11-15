@@ -1,17 +1,40 @@
+// Get the last searched term when reloading, if able
+const searchKey = "previous-search";
+const amountKey = "amount";
+let prevSearch = localStorage.getItem(searchKey);
+let prevAmount = localStorage.getItem(amountKey);
+
 window.onload = (e) => {
     document.querySelector("#search-button").onclick = newSearch;
     document.querySelector("#prev-button").onclick = searchPrev;
     document.querySelector("#next-button").onclick = searchNext;
+
+    // Is there a previous search to pull?
+    if (prevSearch){
+        document.querySelector("#search-input").value = prevSearch;
+    }
+
+    if (prevAmount){
+        document.querySelector(`option[value='${prevAmount}']`).selected = true;
+    }
 };
 
 let offset = 0;
 let displayTerm = "";
 
+// Set a new previous search
+function savePrevSearch(value){
+    localStorage.setItem(searchKey, value);
+    localStorage.setItem(amountKey, limit.value);
+}
+
+// New search term --> reset offset
 function newSearch(){
     offset = 0;
     searchButtonClicked();
 }
 
+// Add negative offset
 function searchPrev(){
     let limit = document.querySelector("#limit").value;
     offset -= parseInt(limit);
@@ -21,6 +44,7 @@ function searchPrev(){
     searchButtonClicked();
 }
 
+// Add positive offset
 function searchNext(){
     let limit = document.querySelector("#limit").value;
     offset += parseInt(limit);
@@ -41,6 +65,9 @@ function searchButtonClicked(){
     displayTerm = term;
 
     term = term.trim();
+
+    // Save the search term in local storage
+    savePrevSearch(term);
 
     term = encodeURIComponent(term);
 
